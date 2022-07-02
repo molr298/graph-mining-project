@@ -1,6 +1,14 @@
 import igraph as ig
 import networkx as nx
 
+class PNSubgraph:
+    def __init__(self, N_vertex, Graph):
+        self.C_id = []
+        self.Size = 0
+        self.Level = []
+        self.PN = []
+        self.Count = []
+
 G = nx.full_rary_tree(3, 5)
 def BFS_extract_PN_subgraph(V, E, N_vertex):
     thresh_PN = 6
