@@ -1,0 +1,34 @@
+
+def PNSubGraph(visited, graph, node):
+  visited.append(node)
+  queue.append(node)
+  
+  PN[node] = [element *-1 for element in data[node][0:threshPN]]
+  Level[node] = 0 
+  while queue:
+    s = queue.pop(0) 
+    print (s, end = " ") 
+    
+    if s not in list(data.keys()) : 
+        break
+    len_pn = len(PN[s])
+    if  len_pn < 2 : 
+       for i in data[s][0:threshPN-len_pn] :
+            PN[s].append(-1*i)
+    for neighbour in data[s]:
+       if neighbour not in visited:
+        visited.append(neighbour)
+        queue.append(neighbour)
+        
+        #Distance_Path_To_Root = Level[s] + Distance[s][neighbour]
+        #Have_Parent = CheckHaveParent(PN[neighbour])
+        # if  Have_Parent : 
+        #     Level[neighbour] = Distance_Path_To_Root
+        # else :
+        #     Level[neighbour] = -Distance_Path_To_Root 
+
+       if len(PN[neighbour]) < threshPN : 
+           PN[neighbour].append(s)
+
+
+PNSubGraph(visited, data, 1)
