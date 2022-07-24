@@ -1,7 +1,7 @@
 from re import L
 from time import sleep
 from turtle import color
-from cv2 import line
+
 from sqlalchemy import false, null, true
 import streamlit as st
 import pandas as pd
